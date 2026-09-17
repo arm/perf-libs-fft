@@ -1,0 +1,43 @@
+# ignore build folders
+build/
+
+# ignore gdb-related files
+.gdb*
+
+# ignore build/swap files
+*.a
+*.d
+*.dbg
+*.mod
+*.o
+*.pyc
+*.swo
+*.swp
+
+# ignore gcov files
+*.gcda
+*.gcno
+*.gcov
+
+# ignore vim backup files
+*~
+
+# ignore ctags files
+tags
+
+# ignore perf data files
+perf.data
+perf.data.old
+
+# ignore generated documentation
+doc/
+
+# ignore core dumps
+core
+core.*
+
+# ignore generated gcov info
+cov*.html
+
+# ignore YouCompleteMe's compile_commands
+compile_commands.json

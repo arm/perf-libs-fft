@@ -1,0 +1,33 @@
+/*
+ * SPDX-FileCopyrightText: Copyright 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+ *
+ * SPDX-License-Identifier: MIT OR Apache-2.0 WITH LLVM-exception
+ */
+
+#include "instr_test.hpp"
+
+using reg = sloejit::reg;
+using aarch64::z_type_variant;
+
+int main() {
+	SloejitInstrTest cases("whilele");
+
+	cases.add_case(0x25231451u, "whilele\tp1.b, x2, x3", IB(make_whilele_prr), aarch64::p1, aarch64::x2,
+	               aarch64::x3, aarch64::zv_b);
+	cases.add_case(0x253f17ffu, "whilele\tp15.b, xzr, xzr", IB(make_whilele_prr), aarch64::p15, aarch64::xzr,
+	               aarch64::xzr, aarch64::zv_b);
+	cases.add_case(0x25631451u, "whilele\tp1.h, x2, x3", IB(make_whilele_prr), aarch64::p1, aarch64::x2,
+	               aarch64::x3, aarch64::zv_h);
+	cases.add_case(0x257f17ffu, "whilele\tp15.h, xzr, xzr", IB(make_whilele_prr), aarch64::p15, aarch64::xzr,
+	               aarch64::xzr, aarch64::zv_h);
+	cases.add_case(0x25a31451u, "whilele\tp1.s, x2, x3", IB(make_whilele_prr), aarch64::p1, aarch64::x2,
+	               aarch64::x3, aarch64::zv_s);
+	cases.add_case(0x25bf17ffu, "whilele\tp15.s, xzr, xzr", IB(make_whilele_prr), aarch64::p15, aarch64::xzr,
+	               aarch64::xzr, aarch64::zv_s);
+	cases.add_case(0x25e31451u, "whilele\tp1.d, x2, x3", IB(make_whilele_prr), aarch64::p1, aarch64::x2,
+	               aarch64::x3, aarch64::zv_d);
+	cases.add_case(0x25ff17ffu, "whilele\tp15.d, xzr, xzr", IB(make_whilele_prr), aarch64::p15, aarch64::xzr,
+	               aarch64::xzr, aarch64::zv_d);
+
+	return cases.validate();
+}

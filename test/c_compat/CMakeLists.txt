@@ -1,0 +1,5 @@
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
+add_executable(c_compat_test c_main.c c_test.cpp)
+target_link_libraries(c_compat_test PRIVATE plfft)
+set_target_properties(c_compat_test PROPERTIES LINKER_LANGUAGE C)
+add_test(NAME run_c_compat_test COMMAND c_compat_test)

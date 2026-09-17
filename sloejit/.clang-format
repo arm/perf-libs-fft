@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+Standard: c++17
+TabWidth: 4
+IndentWidth: 4
+AccessModifierOffset: -4
+ColumnLimit: 110
+UseTab: ForIndentation
+AllowShortFunctionsOnASingleLine: false
+IndentCaseLabels: false
+AlignConsecutiveAssignments: false
+AlignTrailingComments: false
+BreakBeforeBraces: Custom
+AllowShortBlocksOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakTemplateDeclarations: true
+Cpp11BracedListStyle: false
+AllowShortCaseLabelsOnASingleLine: true
+SpaceAfterCStyleCast: true
+BraceWrapping:
+  BeforeElse: true

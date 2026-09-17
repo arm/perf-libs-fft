@@ -1,0 +1,97 @@
+#:schema https://www.schemastore.org/prek.json
+
+[[repos]]
+repo = "https://github.com/psf/black"
+rev = "26.5.1"
+hooks = [
+  {
+    id = "black",
+  }
+]
+
+[[repos]]
+repo = "https://github.com/PyCQA/isort"
+rev = "8.0.1"
+hooks = [
+  {
+    id = "isort"
+  }
+]
+
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.15.15"
+hooks = [
+  {
+    id = "ruff-check"
+  }
+]
+
+[[repos]]
+repo = "https://github.com/pre-commit/mirrors-mypy"
+rev = "v2.1.0"
+hooks = [
+  {
+    id = "mypy",
+    args = ["--config-file", "pyproject.toml"]
+  }
+]
+
+[[repos]]
+repo = "https://github.com/codespell-project/codespell"
+rev = "v2.4.2"
+hooks = [
+  {
+    id = "codespell",
+    exclude = "^downstream/",
+    args = [
+      "--builtin", "clear,rare,en-GB_to_en-US",
+      "-I", ".codespell_ignore_words.txt"
+    ]
+  }
+]
+
+[[repos]]
+repo = "https://github.com/hukkin/mdformat"
+rev = "1.0.0"
+hooks = [
+  {
+    id = "mdformat",
+    additional_dependencies = ["mdformat-gfm==1.0.0"]
+  }
+]
+
+[[repos]]
+repo = "https://github.com/pre-commit/mirrors-clang-format"
+rev = "v22.1.5"
+hooks = [
+  { id = "clang-format" },
+]
+
+[[repos]]
+repo = "https://github.com/shellcheck-py/shellcheck-py"
+rev = "v0.11.0.1"
+hooks = [
+  {
+    id = "shellcheck",
+  }
+]
+
+[[repos]]
+repo = "https://github.com/fsfe/reuse-tool"
+rev = "v6.2.0"
+hooks = [
+  {
+    id = "reuse-lint-file"
+  }
+]
+
+[[repos]]
+repo = "https://github.com/cheshirekow/cmake-format-precommit"
+rev = "v0.6.13"
+hooks = [
+  {
+    id = "cmake-format",
+    exclude = "^.*/kernels\\.cmake$"
+  }
+]
