@@ -1,0 +1,31 @@
+[tool.isort]
+profile = "black"
+lines_between_types = 1
+
+[tool.black]
+target-version = ["py310"]
+line-length = 88
+skip-string-normalization = false
+include = '\.pyi?$'
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+lint.select = ["E", "F", "B", "UP"]
+lint.ignore = ["E501"]  # Ignore long lines, black already handles this.
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+explicit_package_bases = true
+pretty = true
+strict_equality = true
+strict = true
+warn_redundant_casts = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = ["citools", "citools.*", "mako.*"]
+ignore_missing_imports = true

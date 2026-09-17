@@ -1,0 +1,11 @@
+# Exclude this directory from clang-tidy checks.
+#
+# As of clang-tools-extra version 22.1.0, no checks are enabled by
+# default, but clang-tidy still requires at least one enabled check. To
+# exclude this directory from checks, enable one header check and make
+# it ineffective by treating only the unused ".x" extension as a
+# header.
+Checks: '-*,misc-definitions-in-headers'
+CheckOptions:
+  - { key: HeaderFileExtensions, value: "x" }
+

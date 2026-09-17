@@ -1,0 +1,8 @@
+PLFFT
+
+Copyright 2026 Arm Limited and/or its affiliates
+<open-source-office@arm.com>
+
+PLFFT is available under either the MIT license or the Apache License 2.0 with
+the LLVM exception. The complete terms are provided in the accompanying
+MIT.txt, Apache-2.0.txt, and LLVM-exception.txt files.
