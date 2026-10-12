@@ -1,0 +1,29 @@
+name: Build and test
+
+on: [push, pull_request]
+
+jobs:
+  precommit:
+    name: ${{ matrix.provider }} / ${{ matrix.build_type }}
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      matrix:
+        provider: [aot, jit]
+        build_type: [Release, Debug]
+    env:
+      CC: gcc-14
+      CXX: g++-14
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Configure
+        run: >-
+          cmake -S . -B build
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -DPLFFT_KERNEL_PROVIDER=${{ matrix.provider }}
+
+      - name: Build
+        run: cmake --build build --parallel $(nproc)
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure --parallel $(nproc)
