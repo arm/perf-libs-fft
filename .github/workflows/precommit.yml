@@ -16,6 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - uses: actions/setup-python@v6
+        if: matrix.provider == 'jit'
+        with:
+          python-version: '3.12'
+
+      - name: Install Python requirements
+        if: matrix.provider == 'jit'
+        run: python -m pip install -r requirements.txt
+
       - name: Configure
         run: >-
           cmake -S . -B build
