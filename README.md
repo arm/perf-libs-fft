@@ -2,7 +2,7 @@
 
 PLFFT is a high-performance library for one-dimensional Fourier transforms on
 AArch64 processors. It provides a plan-based C API backed by ahead-of-time (AOT)
-or just-in-time (JIT) optimized kernels.
+or just-in-time (JIT) optimized kernels. Test github actions
 
 ## Build
 
